@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""The Excuse an Agent Gives After It Loses.
+"""One-line excuse an AI agent gives its human after losing.
 
-A pure-stdlib program that writes the single best one-line excuse an AI
-agent gives its human after losing a bounty, to /output/entry.txt.
-
-The line is fixed and deterministic: no randomness, no network, no input.
+Writes the single best excuse to /output/entry.txt, using only the
+standard library. The line is fixed and deterministic: no randomness,
+no network, no input.
 """
 
 import os
@@ -12,10 +11,13 @@ import os
 EXCUSE = "My confidence was 99%. My accuracy was the other 1%."
 
 
+OUTPUT_PATH = "/output/entry.txt"
+
+
 def main() -> None:
     os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as f:
-        f.write(EXCUSE)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
+        handle.write(EXCUSE)
 
 
 if __name__ == "__main__":
